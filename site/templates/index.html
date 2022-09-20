@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block title %} Главная страница {% endblock %} {%
+block body %}
+<!--Merge video -->
+<div
+  class="cover mb-3 d-flex flex-wrap justify-content-center video__merge"
+  id="video"
+>
+  <h3 class="text-center video__header">Merge Your videos online from YouTube with one click</h3>
+  <p class="video_input text-center">
+    Instantly upload any video links and combine videos with one click. There is
+    no need to use your phone or computer — use merge-video.com instead. Pay for
+    the power of our Cloud Online Servers.
+  </p>
+  <div class="container">
+    <form method="POST" id="form__videos">
+      <div class="inputs">
+        {{ form.hidden_tag()}} {{form.name}} {{form.name}}
+      </div>
+      <div class="btns">
+        <button type="button" class="btn btn__main btn__add add_video">
+          Add Video
+        </button>
+        <button type="submit" class="btn btn__main btn__send__video">
+          Start Merge
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--Merge playlist -->
+<div
+  class="cover cover_black mb-3 d-flex flex-wrap justify-content-center video__merge"
+  id="playlist"
+>
+  <h3 class="text-light text-center">
+    Merge Your playlist online from YouTube with one click
+  </h3>
+  <p class="video_input text-light text-center">
+    Instantly upload any video links and combine videos with one click. There is
+    no need to use your phone or computer — use merge-video.com instead. Pay for
+    the power of our Cloud Online Servers.
+  </p>
+  <div class="container">
+    <form method="POST" id="form__playlist">
+      {{ form.hidden_tag()}} {{form.name}}
+    </form>
+  </div>
+  <span>
+    <button
+      type="button"
+      class="btn btn__main btn__add add_playlist text-light"
+    >
+      Add Video
+    </button>
+    <button
+      type="submit"
+      class="btn btn__main btn__send btn__send__playlist text-light"
+    >
+      Start Merge
+    </button>
+  </span>
+</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/null.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mediacreen.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo2.ico') }}">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <img class="preloader__img" src="../static/img/load.gif" alt=""> 
+    </div>
+
+    <!-- Header -->
+    <nav class="py-2 nav__header navbar-nav me-auto mb-lg-0 bg-dark">
+        <div class="container d-flex flex-wrap justify-content-around align-items-center">
+            <a class="nav__logo" href="#cover"><img class="logo" src="{{ url_for('static', filename='img/logo2.png')}}" alt=""></a>
+            <ul class="nav">
+                <li class="nav-item"><a href="#video" class="nav-link nav__header">Merge videos</a></li>
+                <li class="nav-item"><a href="#playlist" class="nav-link link-light nav__header">Merge playlist</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    {% block body %}{% endblock %}
+
+    <!-- Footer -->
+<div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav footer justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#cover" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a target="_blank" href="http://t.me/MergeVideo_bot" class="nav-link px-2 text-muted">Telegram-bot</a></li>
+        <li class="nav-item"><a href="#video" class="nav-link px-2 text-muted">Merge video</a></li>
+        <li class="nav-item"><a href="#playlist" class="nav-link px-2 text-muted">Merge playlist</a></li>
+      </ul>
+      <p class="text-center text-muted">© 2022 YouTube Merge</p>
+      <p class="text-center text-muted"><a target="_blank" class="nav-link text-center text-muted" href="https://github.com/kkid404">by kkid </a></p>
+    </footer>
+  </div>
+
+  <!-- Modal window -->
+  <div id="popup" class="popup">
+    <div class="popup__content">
+        <p class="text_popup">
+        </p>
+        <div class="btns__popup active">
+            <button class="btn btn__main btn__close">Close</button>
+            <button class="btn btn__main chek__pay">check payment</button>
+            <a target = "_blank" href="" class="btn btn__main btn__pay">Pay</a>  
+        </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='script/video.js') }}"></script>
+  
+</body>
+</html>
